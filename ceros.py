@@ -94,28 +94,4 @@ class Funciones:
     data = pd.DataFrame(info, columns=["Iteracion", "x0", "x1", "Error"])
     return round(x1, 6), data
 
-ceros = Funciones()
 
-
-f_denominador = lambda s: s**4 + 19*s**3 + 122*s**2 + 296*s + 192
-f_numerador = lambda s: s**3 + 12.5*s**2 + 50.5*s + 66
-
-res, i, error, m = ceros.Biseccion(f_numerador, -6, -5, 10**-6)
-print(res)
-print(i)
-print(error)
-print("_____________")
-res, i, error, m = ceros.Falsa_posicion(f_denominador, -7, -5, 10**-6)
-print(res)
-print(i)
-print(error)
-print("_____________")
-res, i, error, m= ceros.secante(f_numerador, -2.5, -2, 10**-6)
-print(res)
-print(i)
-print(error)
-print("_____________")
-res, i, error, m = ceros.newton(f_denominador, 0, 10**-6)
-print(res)
-print(i)
-print(error)
